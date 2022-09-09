@@ -1,3 +1,6 @@
+import java.util.EnumSet;
+import java.util.Set;
+
 public class Television {
 
   public static final int MIN_VOLUME = 0;
@@ -6,6 +9,8 @@ public class Television {
   private static int instanceCount = 0;
   private String brand;
   private int volume;
+
+  private DisplayType display = DisplayType.LED;
 
   public Television(){
     instanceCount++;
@@ -20,6 +25,12 @@ public class Television {
     this(brand);
     setVolume(volume);
   }
+
+  public Television (String brand, int volume, DisplayType display){
+    this(brand, volume); //chaining to another constructor, which is identified based on parameters
+    setDisplay(display);
+  }
+
 
   //business methods
   public void turnOn() {
@@ -75,6 +86,14 @@ public class Television {
   }
 
   public String toString(){
-      return "Television: brand = " + brand + ", volume = " + volume;
+      return "Television: brand = " + brand + ", volume = " + volume + " Display Type: = " + display;
+  }
+
+  public void setDisplay(DisplayType display) {
+    this.display = display;
+  }
+
+  public DisplayType getDisplay() {
+    return display;
   }
 }
