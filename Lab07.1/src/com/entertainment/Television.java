@@ -15,6 +15,7 @@ public class Television {
     instanceCount++;
   }
 
+  //constructors
   public Television (String brand){
     this();
     setBrand(brand);
@@ -29,7 +30,6 @@ public class Television {
     this(brand, volume); //chaining to another constructor, which is identified based on parameters
     setDisplay(display);
   }
-
 
   //business methods
   public void turnOn() {
