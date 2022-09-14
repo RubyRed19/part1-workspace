@@ -18,6 +18,7 @@ class TelevisionClient {
         System.out.println(tv);
         
         // TODO: change the channel
+        tv.changeChannel("FX");
         
         System.out.println(tv);
     }
