@@ -20,7 +20,11 @@ public class IRS {
 
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
-            payers[i].payTaxes();
+            double deduction = payers[i].getStandardDeduction();
+            System.out.printf("Tax payer's deduction is: %,.2f%n", deduction);
+            payers[i].payTaxes();//polymorphism finds whether it should be hourly vs salary
+            System.out.println();
+
         }
     }
     
