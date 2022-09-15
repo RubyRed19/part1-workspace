@@ -53,7 +53,7 @@ public class HourlyEmployee extends Employee {
     public void setRate(double rate) throws IllegalWageException {
         if(rate < FEDERAL_MINIMUM_WAGE){
             throw new IllegalWageException(
-                String.format(("Illegal wage: " + rate + " Federal minimum wage is " + FEDERAL_MINIMUM_WAGE)));
+                String.format(("Illegal wage: %,.2f. Federal minimum wage is %.2f%n"), rate, FEDERAL_MINIMUM_WAGE));
         }else this.rate = rate;
     }
 
